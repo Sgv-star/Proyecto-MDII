@@ -1,0 +1,3 @@
+Ejercicio 1:
+1. \bMa[a-zñáéíóú]{0,}[aeiouáéíóú]\b (Esta tiene problemas identificando las palabras que terminan en vocal con tílde, directamente no lo hace)
+2. \b[A-ZÑÁÉÍÓÚ]*[a-zñáéíóú]*[nrs]\b (Aparentemente está bien)
