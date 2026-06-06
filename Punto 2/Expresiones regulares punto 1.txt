@@ -1,3 +1,4 @@
 Ejercicio 1:
-1. \bMa[a-zñáéíóú]{0,}[aeiouáéíóú]\b (Esta tiene problemas identificando las palabras que terminan en vocal con tílde, directamente no lo hace)
+1. \bMa[a-zA-ZáéíóúÁÉÍÓÚ]*[aeiouAEIOUáéíóúÁÉÍÓÚ]\b (Esta tiene problemas identificando las palabras que terminan en vocal con tílde, directamente no lo hace)
 2. \b[A-ZÑÁÉÍÓÚ]*[a-zñáéíóú]*[nrs]\b (Aparentemente está bien)
+3. \b\.\s+([A-ZÁÉÍÓÚÑ][a-zA-ZáéíóúÁÉÍÓÚñÑ]*)\b (Esta parece funcionar pero marca desde el punto hasta la el final de la palabra en sí)
