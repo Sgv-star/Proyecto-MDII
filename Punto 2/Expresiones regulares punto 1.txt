@@ -4,11 +4,12 @@ Ejercicio 1:
 2. las palabras que terminan en la consonante n o r o s:
 	\b[A-ZÑÁÉÍÓÚ]*[a-zñáéíóú]*[nrs]\b (Aparentemente está bien)
 3.  buscar aquellas palabras que empiecen por letras mayúsculas, después de un punto y seguido, punto y aparte:
-      \.\s+([A-ZÁÉÍÓÚÑ][a-zA-ZáéíóúÁÉÍÓÚñÑ]*) (Esta parece funcionar pero marca desde el punto hasta la el final de la palabra en sí)
+      \.\s+([A-ZÁÉÍÓÚÑ][a-zA-ZáéíóúÁÉÍÓÚñÑ]*) (Esta parece funcionar lo único malo es que marca desde el punto hasta la el final de la palabra en sí)
 			ó
    \b(<?=\.\s)*([A-ZÁÉÍÓÚÑ][a-zA-ZáéíóúÁÉÍÓÚñÑ]*)\b (Esta tiene aparentemente un solo error, también marca palabras en medio de párrafo que empiecen con mayúsucula aunque no estén antecedidas por punto)
 4.  Localizar las palabras que contengan todas las vocales incluidas con tildes:
-	\b[a-zA-Z]*[ae]+[a-zA-Z]*[aeiouáéíóú]+[a-zA-Z]*[aeiouáéíóú]+[a-zA-Z]*[aeiouáéíóú]+[a-zA-Z]*[aeiouáéíóú]+[a-zA-Z]*\b (No se asegura de que la palabra contenga obligatoriamente cada vocal)
+	\b[a-zA-Z]*[ae]+[a-zA-Z]*[aeiouáéíóú]+[a-zA-Z]*[aeiouáéíóú]+[a-zA-Z]*[aeiouáéíóú]+[a-zA-Z]*[aeiouáéíóú]+[a-zA-Z]*\b (No se asegura de que la palabra contenga obligatoriamente cada vocal pero sí toma tíldes)
+	\b(?=[A-Za-záéíóúÁÉÍÓÚñÑ]*[aáAÁ])(?=[A-Za-záéíóúÁÉÍÓÚñÑ]*[eéEÉ])(?=[A-Za-záéíóúÁÉÍÓÚñÑ]*[iíIÍ])(?=[A-Za-záéíóúÁÉÍÓÚñÑ]*[oóOÓ])(?=[A-Za-záéíóúÁÉÍÓÚñÑ]*[uúUÚ])\w+\b (Asegura que la palabra contenga todas las vocales pero no marca tíldes)
 5. Encontrar las palabras marcadas con las tildes (por ejemplo: programación en el vocabulario ES):
 6. Por consiguiente, se espera marcar las palabras que empiecen en mayúsculas y contenga un apóstrofo (por ejemplo: L'Hôpital, D'Angelo):
 7. Por último, debe encontrar las palabras que contenga el símbolo @:
